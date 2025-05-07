@@ -1,0 +1,65 @@
+.project-index-root {
+  max-width: 95vw;
+  margin: 40px auto 0 auto;
+  padding: 0 40px;
+}
+
+.project-index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.project-index-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.project-index-create {
+  background: var(--submit-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 22px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.project-index-create:hover {
+  background: var(--submit-color-hover);
+}
+
+.project-index-search-row {
+  margin-bottom: 18px;
+}
+
+.project-index-search {
+  border: 1px solid #b3c6db;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 15px;
+  width: 250px;
+}
+
+.project-index-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.project-index-table th,
+.project-index-table td {
+  text-align: left;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.project-index-table th {
+  font-weight: 600;
+  color: #222;
+  border-bottom: 1px solid #ccc;
+}

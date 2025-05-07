@@ -5,10 +5,14 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import "./App.css";
+
+import "./styles/common.css";
 import AuthIndex from "./pages/auth/Index";
 import Login from "./pages/auth/Login";
 import VerifyCode from "./pages/auth/VerifyCode";
+import ProjectIndex from "./pages/main/Project/Index";
+import MainIndex from "./pages/main/Index";
+import Home from "./pages/main/home";
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
           <Route path="verify-code" element={<VerifyCode />} />
           {/* <Route path="register" element={<Register />} /> 등 추가 가능 */}
           {/* /auth로 접근 시 기본으로 Login */}
+        </Route>
+        <Route path="/" element={<MainIndex />}>
+          <Route path="home" element={<Home />} />
+          <Route path="projects" element={<ProjectIndex />} />
         </Route>
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>

@@ -24,7 +24,7 @@
 }
 
 .auth-title {
-  color: #2166a5;
+  color: var(--submit-color);
   font-size: 22px;
   font-weight: 600;
   margin: 0 0 32px 0;
@@ -53,7 +53,7 @@
 .auth-button {
   margin-top: 10px;
   height: 36px;
-  background: #2166a5;
+  background: var(--submit-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -64,13 +64,13 @@
 }
 
 .auth-button:hover {
-  background: #174a7c;
+  background: var(--submit-color-hover);
 }
 
 .auth-forgot {
   display: block;
   margin-top: 18px;
-  color: #2166a5;
+  color: var(--submit-color);
   font-size: 14px;
   text-align: center;
   text-decoration: underline;
