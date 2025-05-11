@@ -5,7 +5,7 @@ const MainIndex: React.FC = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div style={{ height: "calc(100vh - 70px)" }}>
         <Outlet />
       </div>
     </div>
