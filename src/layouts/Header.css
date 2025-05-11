@@ -4,8 +4,9 @@
   align-items: center;
   background: #fff;
   padding: 0 40px;
-  border-radius: 6px;
-  border-bottom: 1px solid #b3c6db;
+  /* border-radius: 6px; */
+  /* border-bottom: 1px solid #b3c6db; */
+  border-bottom: 1px solid var(--gray-color);
 }
 
 .header-left {
@@ -80,7 +81,8 @@
 }
 
 .header-search {
-  border: 1px solid #b3c6db;
+  /* border: 1px solid #b3c6db; */
+  border: 1px solid var(--gray-color);
   border-radius: 4px;
   padding: 4px 10px;
   font-size: 15px;

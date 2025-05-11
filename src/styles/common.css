@@ -1,4 +1,42 @@
 :root {
   --submit-color: #2166a5;
   --submit-color-hover: #174a7c;
+  --gray-color: #b1b1b1;
+  --gray-color-hover: #8d8c8c;
+}
+
+* {
+  border-color: var(--gray-color);
+}
+
+.cancel-btn {
+  background-color: var(--gray-color);
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-size: 15px;
+  border: none;
+}
+
+.cancel-btn:hover {
+  background-color: var(--gray-color-hover);
+}
+
+.submit-btn {
+  background-color: var(--submit-color);
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-size: 15px;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: var(--submit-color-hover);
+}
+
+.two-btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }

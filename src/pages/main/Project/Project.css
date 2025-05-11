@@ -38,7 +38,8 @@
 }
 
 .project-index-search {
-  border: 1px solid #b3c6db;
+  /* border: 1px solid #b3c6db; */
+  border: 1px solid var(--gray-color);
   border-radius: 4px;
   padding: 5px 10px;
   font-size: 15px;
@@ -61,14 +62,16 @@
 .project-index-table th {
   font-weight: 600;
   color: #222;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
+  border-bottom: 1px solid var(--gray-color);
 }
 
 .project-sidebar-root {
   width: 200px;
   height: 100vh;
   background: #f7f8fa;
-  border-right: 1px solid #e0e4ea;
+  /* border-right: 1px solid #e0e4ea; */
+  border-right: 1px solid var(--gray-color);
   display: flex;
   flex-direction: column;
   /* position: fixed; */

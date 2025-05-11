@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import "./Project.css";
+import Modal from "../../components/Modal";
+import { useState } from "react";
+import CreateModal from "./components/CreateModal";
 
 const data = [
   {
@@ -25,11 +28,28 @@ const ProjectList: React.FC = () => {
     navigate(`/projects/${id}`);
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSubmit = () => {
+    alert("submit");
+    handleModalClose();
+  };
+
   return (
     <div className="project-index-root">
       <div className="project-index-header">
         <h2 className="project-index-title">Projects</h2>
-        <button className="project-index-create">Create project</button>
+        <button className="project-index-create" onClick={handleModalOpen}>
+          Create project
+        </button>
       </div>
       <div className="project-index-search-row">
         <input
@@ -57,6 +77,9 @@ const ProjectList: React.FC = () => {
           ))}
         </tbody>
       </table>
+      <Modal open={isModalOpen} onClose={handleModalClose}>
+        <CreateModal onCancel={handleModalClose} onSubmit={handleSubmit} />
+      </Modal>
     </div>
   );
 };
