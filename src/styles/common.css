@@ -37,6 +37,13 @@
 
 .two-btn-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
+}
+
+.basic-input {
+  border: 1px solid var(--gray-color);
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 15px;
 }
