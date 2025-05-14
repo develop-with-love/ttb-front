@@ -1,4 +1,6 @@
-import ProjectSidebar from "./ProjectSidebar";
+import { useState } from "react";
+import ProjectOpenSidebar from "./ProjectOpenSidebar";
+import ProjectColesSidebar from "./ProjectColesSidebar";
 import { Outlet, useParams } from "react-router-dom";
 
 const ProjectDetail: React.FC = () => {
@@ -9,9 +11,20 @@ const ProjectDetail: React.FC = () => {
     name: "Project 1",
   };
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
   return (
     <div className="project-detail-root">
-      <ProjectSidebar name={res.name} />
+      {isSidebarOpen && (
+        <ProjectOpenSidebar name={res.name} onToggleSidebar={toggleSidebar} />
+      )}
+      {!isSidebarOpen && (
+        <ProjectColesSidebar onToggleSidebar={toggleSidebar} />
+      )}
       <div>
         <Outlet />
       </div>

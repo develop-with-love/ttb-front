@@ -1,6 +1,7 @@
 import React from "react";
 import "./Project.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import squareLeft from "../../../assets/SquareLeft.png";
 
 const menuItems = [
   { label: "Roadmap", path: "roadmap" },
@@ -10,7 +11,10 @@ const menuItems = [
   { label: "Setting", path: "setting", bottom: true },
 ];
 
-const ProjectSidebar: React.FC<{ name: string }> = ({ name }) => {
+const ProjectOpenSidebar: React.FC<{
+  name: string;
+  onToggleSidebar: () => void;
+}> = ({ name, onToggleSidebar }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -20,7 +24,28 @@ const ProjectSidebar: React.FC<{ name: string }> = ({ name }) => {
         <div className="project-sidebar-project-icon" />
         <span>{name}</span>
       </div>
-      <div className="project-sidebar-menu-list">
+      <div
+        className="project-sidebar-menu-list"
+        style={{ position: "relative" }}
+      >
+        <button
+          type="button"
+          className="sidebar-arrow-btn"
+          style={{
+            position: "absolute",
+            top: "-18px",
+            right: "-17px",
+            cursor: "pointer",
+            zIndex: 2,
+          }}
+          onClick={onToggleSidebar}
+        >
+          <img
+            src={squareLeft}
+            alt="사이드바 토글"
+            style={{ width: 34, height: 34 }}
+          />
+        </button>
         {menuItems.map((item) => {
           // 현재 경로가 해당 메뉴의 path로 끝나면 active
           const isActive = location.pathname.endsWith(item.path);
@@ -42,4 +67,4 @@ const ProjectSidebar: React.FC<{ name: string }> = ({ name }) => {
   );
 };
 
-export default ProjectSidebar;
+export default ProjectOpenSidebar;
