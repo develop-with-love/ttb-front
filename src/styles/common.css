@@ -16,6 +16,8 @@
   padding: 8px 15px;
   font-size: 15px;
   border: none;
+  min-width: 75px;
+  cursor: pointer;
 }
 
 .cancel-btn:hover {
@@ -29,6 +31,8 @@
   padding: 8px 15px;
   font-size: 15px;
   border: none;
+  min-width: 75px;
+  cursor: pointer;
 }
 
 .submit-btn:hover {

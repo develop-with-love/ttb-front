@@ -26,6 +26,9 @@ const ProjectDetail: React.FC = () => {
         <ProjectColesSidebar onToggleSidebar={toggleSidebar} />
       )}
       <div>
+        <h2>Project name</h2>
+      </div>
+      <div>
         <Outlet />
       </div>
     </div>

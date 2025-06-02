@@ -7,10 +7,9 @@ import iconImg from "../../../../assets/Icon.png";
 
 type CreateModalProps = {
   onCancel: () => void;
-  onSubmit: () => void;
 };
 
-const CreateModal = ({ onCancel, onSubmit }: CreateModalProps) => {
+const CreateModal = ({ onCancel }: CreateModalProps) => {
   const [image, setImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -27,8 +26,13 @@ const CreateModal = ({ onCancel, onSubmit }: CreateModalProps) => {
     }
   };
 
+  const handleSubmit = () => {
+    alert("submit");
+    onCancel();
+  };
+
   return (
-    <div className="create-modal-root">
+    <>
       <h2>Create project</h2>
       <div
         style={{
@@ -122,9 +126,9 @@ const CreateModal = ({ onCancel, onSubmit }: CreateModalProps) => {
       </div>
       <div className="two-btn-row">
         <CancelButton onCancel={onCancel} />
-        <CreateButton onSubmit={onSubmit} />
+        <CreateButton onSubmit={handleSubmit} />
       </div>
-    </div>
+    </>
   );
 };
 

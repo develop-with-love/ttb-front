@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom";
 import "./Project.css";
 import Modal from "../../components/Modal";
 import { useState } from "react";
-import CreateModal from "./components/CreateModal";
+// import CreateModal from "./components/CreateModal";
+import CreateModal from "../../../layouts/CreateModal";
 
 const data = [
   {
@@ -19,9 +20,18 @@ const data = [
     type: "type2",
     lead: "lead2",
   },
+  {
+    id: "2345",
+    name: "프로젝트",
+    key: "프로젝트",
+    type: "type3",
+    lead: "lead3",
+  },
 ];
 
 const ProjectList: React.FC = () => {
+  const [projects, setProjects] = useState(data);
+
   const navigate = useNavigate();
 
   const handleClick = (id: string) => {
@@ -43,6 +53,15 @@ const ProjectList: React.FC = () => {
     handleModalClose();
   };
 
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    setProjects(
+      data.filter((project) =>
+        project.name.toLowerCase().includes(e.target.value.toLowerCase())
+      )
+    );
+  };
+
   return (
     <div className="project-index-root">
       <div className="project-index-header">
@@ -55,6 +74,7 @@ const ProjectList: React.FC = () => {
         <input
           className="project-index-search"
           placeholder="검색어를 입력하세요"
+          onChange={handleSearch}
         />
       </div>
       <table className="project-index-table">
@@ -67,7 +87,7 @@ const ProjectList: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          {projects.map((item) => (
             <tr key={item.id}>
               <td onClick={() => handleClick(item.id)}>{item.name}</td>
               <td>{item.key}</td>
@@ -78,7 +98,7 @@ const ProjectList: React.FC = () => {
         </tbody>
       </table>
       <Modal open={isModalOpen} onClose={handleModalClose}>
-        <CreateModal onCancel={handleModalClose} onSubmit={handleSubmit} />
+        <CreateModal onCancel={handleModalClose} category="project" />
       </Modal>
     </div>
   );

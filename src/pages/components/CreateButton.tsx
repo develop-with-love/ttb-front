@@ -1,9 +1,10 @@
 type CreateButtonProps = {
   onSubmit: () => void;
+  text?: string;
 };
-const CreateButton = ({ onSubmit }: CreateButtonProps) => (
+const CreateButton = ({ onSubmit, text = "Create" }: CreateButtonProps) => (
   <button className="submit-btn" onClick={onSubmit}>
-    Create
+    {text}
   </button>
 );
 export default CreateButton;
