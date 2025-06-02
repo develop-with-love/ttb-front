@@ -83,7 +83,7 @@ const Login: React.FC = () => {
           Sign in
         </button>
       </form>
-      <Link to="/auth/verify-code" className="auth-forgot">
+      <Link to="/login/verify-code" className="auth-forgot">
         Forgot password?
       </Link>
     </div>

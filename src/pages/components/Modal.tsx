@@ -36,7 +36,7 @@ const overlayStyle: React.CSSProperties = {
 const modalStyle: React.CSSProperties = {
   background: "#fff",
   borderRadius: 10,
-  boxShadow: "0 2px 12px 0 rgba(0,0,0,0.18)",
+  boxShadow: "0 2px 12px 0 rgba(0,0,0,0.5)",
   padding: "32px 32px 24px 32px",
   minWidth: 350,
   minHeight: 200,
